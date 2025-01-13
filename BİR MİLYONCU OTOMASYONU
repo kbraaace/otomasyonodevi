@@ -1,0 +1,112 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+#include <limits>
+#include <locale>
+using namespace std;
+
+struct Urun {
+    int numara;
+    string isim;
+    double fiyat;
+    int stok;
+};
+
+void urunleriKaydet(const Urun* urunler, int urunSayisi, const string& dosyaAdi) {
+    ofstream dosya(dosyaAdi.c_str(), ios::binary); // c_str() ekledik
+    if (!dosya) {
+        cout << "Dosya açilamadi!" << endl;
+        return;
+    }
+    dosya.write(reinterpret_cast<const char*>(urunler), sizeof(Urun) * urunSayisi);
+    dosya.close();
+    cout << "Ürünler başarıyla kaydedildi." << endl;
+}
+
+int urunleriYukle(Urun* urunler, int maxUrunSayisi, const string& dosyaAdi) {
+    ifstream dosya(dosyaAdi.c_str(), ios::binary); // c_str() ekledik
+    if (!dosya) {
+        cout << "Dosya açılamadı!" << endl;
+        return 0;
+    }
+    int urunSayisi = 0;
+    while (dosya.read(reinterpret_cast<char*>(&urunler[urunSayisi]), sizeof(Urun)) && urunSayisi < maxUrunSayisi) {
+        urunSayisi++;
+    }
+    dosya.close();
+    cout << "Ürünler başarıyla yüklendi." << endl;
+    return urunSayisi;
+}
+
+void urunEkle(Urun* urunler, int& urunSayisi, int maxUrunSayisi) {
+    if (urunSayisi >= maxUrunSayisi) {
+        cout << "Daha fazla ürün eklenemez!" << endl;
+        return;
+    }
+    Urun& yeniUrun = urunler[urunSayisi];
+    cout << "Ürün Numara: ";
+    cin >> yeniUrun.numara;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ürün İsmi: ";
+    getline(cin, yeniUrun.isim);
+    cout << "Ürün Fiyatı: ";
+    cin >> yeniUrun.fiyat;
+    cout << "Stok Adedi: ";
+    cin >> yeniUrun.stok;
+    urunSayisi++;
+    cout << "Ürün başarıyla eklendi." << endl;
+}
+
+void urunleriListele(const Urun* urunler, int urunSayisi) {
+    cout << left << setw(10) << "Numara" << setw(20) << "İsim" << setw(10) << "Fiyat" << "Stok" << endl;
+    int toplamGenislik = 10 + 20 + 10 + 10;
+    cout << string(toplamGenislik, '-') << endl;
+    for (int i = 0; i < urunSayisi; ++i) {
+        const Urun& urun = urunler[i];
+        cout << left << setw(10) << urun.numara << setw(20) << urun.isim << setw(10) << urun.fiyat << urun.stok << endl;
+    }
+}
+
+void menu() {
+    cout << "Bir Milyoncu Otomasyonu" << endl;
+    cout << "1. Ürünleri Listele" << endl;
+    cout << "2. Yeni Ürün Ekle" << endl;
+    cout << "3. Ürünleri Kaydet" << endl;
+    cout << "4. Çıkış" << endl;
+    cout << "Seçiminiz: ";
+}
+
+int main() {
+	
+	setlocale(LC_ALL, "Turkish");
+
+    const int MAX_URUN = 100;
+    Urun urunler[MAX_URUN];
+    int urunSayisi = urunleriYukle(urunler, MAX_URUN, "urunler.bin");
+    int secim;
+
+    do {
+        menu();
+        cin >> secim;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        switch (secim) {
+            case 1:
+                urunleriListele(urunler, urunSayisi);
+                break;
+            case 2:
+                urunEkle(urunler, urunSayisi, MAX_URUN);
+                break;
+            case 3:
+                urunleriKaydet(urunler, urunSayisi, "urunler.bin");
+                break;
+            case 4:
+                cout << "Çıkış yapılıyor..." << endl;
+                break;
+            default:
+                cout << "Geçersiz seçim!" << endl;
+        }
+    } while (secim != 4);
+
+    return 0;
+}
