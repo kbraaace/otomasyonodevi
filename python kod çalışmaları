@@ -1,0 +1,2217 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO3N1bFOG9qClU/IhKZ58oZ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kbraaace/otomasyonodevi/blob/main/python%20kod%20%C3%A7al%C4%B1%C5%9Fmalar%C4%B1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yz_jbj4V2j_r",
+        "outputId": "51784215-6be8-4174-d8ca-84adce5bf1ca"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "birinci kenar:4\n",
+            "ikinci kenar:5\n",
+            "ucuncu kenar:3\n",
+            "6.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "import math\n",
+        "a = float (input(\"birinci kenar:\"))\n",
+        "b = float (input(\"ikinci kenar:\"))\n",
+        "c = float (input(\"ucuncu kenar:\"))\n",
+        "s = (a+b+c)/2\n",
+        "alan = math.sqrt(s*(s-a)*(s-b)*(s-c))\n",
+        "print(alan)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "yuksek_not = 95\n",
+        "sinav1 = int(input(\"birinci sianv notunu giriniz:\"))\n",
+        "sinav2 = int(input(\"ikinci sianv notunu giriniz:\"))\n",
+        "sinav3 = int(input(\"ucuncu sianv notunu giriniz:\"))\n",
+        "\n",
+        "ortalama=(sinav1+ sinav2+ sinav3)/3\n",
+        "print(f\"Ortalama not:{ortalama:.2f}\")\n",
+        "\n",
+        "\n",
+        "if ortalama >= yuksek_not:\n",
+        "  print(\"Tebrikler!\")\n",
+        "  print(\"Bu harika bir ortalama!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7lC_V2gY8AME",
+        "outputId": "be749be4-53f3-4ea3-97c7-f4463c667801"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "birinci sianv notunu giriniz:100\n",
+            "ikinci sianv notunu giriniz:100\n",
+            "ucuncu sianv notunu giriniz:100\n",
+            "Ortalama not:100.00\n",
+            "Tebrikler!\n",
+            "Bu harika bir ortalama!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = float(input(\"Alısveris tutarini giriniz:\"))\n",
+        "\n",
+        "if a < 500:\n",
+        "  print(\"Odenecek tutar:\")\n",
+        "  print(a)\n",
+        "\n",
+        "if 500 <= a <= 1000:\n",
+        "  print(\"Odenecek tutar:\")\n",
+        "  print(a-a*(1/10))\n",
+        "\n",
+        "if a > 1000:\n",
+        "  print(\"Odenecek tutar:\")\n",
+        "  print(a-a*(1/5))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Tzb-TSrpAyhH",
+        "outputId": "9c7cb4aa-14cf-42a5-f263-6d79294cb00b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alısveris tutarini giriniz:600\n",
+            "Odenecek tutar:\n",
+            "540.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "kilo = float(input(\"Kilonuzu giriniz (kg):\"))\n",
+        "boy = float(input(\"Boyunuzu giriniz (m):\"))\n",
+        "bki = kilo / (boy**2)\n",
+        "\n",
+        "if bki == 18.5:\n",
+        "  print(\"Zayif\")\n",
+        "\n",
+        "elif 18.5 < bki <= 24.9:\n",
+        "  print(\"Normal\")\n",
+        "\n",
+        "elif 25 <= bki <= 29.9:\n",
+        "  print(\"Fazla Kilolu\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vdjiVivfRy5T",
+        "outputId": "23b86c0a-3e1a-45f5-83a7-12e986fcc7f6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Kilonuzu giriniz (kg):60\n",
+            "Boyunuzu giriniz (m):1.64\n",
+            "Normal\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "kilo = float(input(\"Kilonuzu giriniz (kg):\"))\n",
+        "boy = float(input(\"Boyunuzu giriniz (m):\"))\n",
+        "bki = kilo / (boy**2)\n",
+        "\n",
+        "if 30 <= bki <= 34.9:\n",
+        "  print(\"1.dereceden obez\")\n",
+        "\n",
+        "elif 35 <= bki <= 39.9:\n",
+        "  print(\"2.dereceden obez\")\n",
+        "\n",
+        "elif bki >= 40:\n",
+        "  print(\"3.dereceden obez\")\n",
+        "\n",
+        "else:\n",
+        "  print(\"Yanlis Sayi Girdiniz\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2zBXYee5TBNC",
+        "outputId": "f5612dc8-0d8f-4062-c0f2-1a0dffca74e2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Kilonuzu giriniz (kg):60\n",
+            "Boyunuzu giriniz (m):1.64\n",
+            "Yanlis Sayi Girdiniz\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "farkli_turler_listesi = [1 ,\"Merhaba\",3.14,True,[1,2,3],{\"anahtar\" : \"deger\"}]\n",
+        "print(farkli_turler_listesi[2])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MYRLpRbC6pH-",
+        "outputId": "4d4333f4-aa5f-4fa7-94e7-3d37e69added"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3.14\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "liste1 = list(range(5))\n",
+        "print(liste1)"
+      ],
+      "metadata": {
+        "id": "gW-8coMI982x",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "e0fea03f-4983-45a5-c09f-a441686edafd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 1, 2, 3, 4]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "\n",
+        "def main():\n",
+        " r = float(input(\"Dairenin yaricapini giriniz:\"))\n",
+        " theta = float(input(\"Merkez aciyi girin(derece):\"))\n",
+        " alan = daire_dilimi_alani(r, theta)\n",
+        " print(f\"Daire diliminin alani:{alan:.2f}\")\n",
+        "\n",
+        "def daire_dilimi_alani(r, theta):\n",
+        "  alan = math.pi * r**2 * (theta / 360)\n",
+        "  return alan\n",
+        "\n",
+        "main()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yP5Pg30_CUSp",
+        "outputId": "352ac524-22f5-4bce-8020-ed1b0be34af2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dairenin yaricapini giriniz:5\n",
+            "Merkez aciyi girin(derece):60\n",
+            "Daire diliminin alani:13.09\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def dikdortgen_prizma_hacmi(uuznluk,genislik=10,yukseklik=5):\n",
+        "\n",
+        "  return uzunluk*genislik*yukseklik\n",
+        "\n",
+        "uzunluk=float(input(\"Uzunlugu giriniz:\"))\n",
+        "\n",
+        "hacim1=dikdortgen_prizma_hacmi(uzunluk)\n",
+        "print(f\"Dikdortgen prizmanin hacmi(Varsayilan genislik=10,yukseklik=5):{hacim1}\")\n",
+        "\n",
+        "genislik=float(input(\"Genisligi giriniz:\"))\n",
+        "hacim2=dikdortgen_prizma_hacmi(uzunluk,genislik=genislik)\n",
+        "print(f\"Dikdortgen prizmanin hacmi(Belirtilen genislik,varsayilan yukseklik=5):{hacim2}\")\n",
+        "\n",
+        "yukseklik=float(input(\"Yuksekligi giriniz:\"))\n",
+        "hacim3 = dikdortgen_prizma_hacmi(uzunluk,genislik=genislik,yukseklik=yukseklik)\n",
+        "print(f\"Dikdortgen prizmanin hacmi(Belirtilen genislik ve yukseklik):{hacim3}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MXZUPlXk-yYW",
+        "outputId": "28cd7284-0065-4385-f9a1-4491c0348da0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Uzunlugu giriniz:10\n",
+            "Dikdortgen prizmanin hacmi(Varsayilan genislik=10,yukseklik=5):500.0\n",
+            "Genisligi giriniz:5\n",
+            "Dikdortgen prizmanin hacmi(Belirtilen genislik,varsayilan yukseklik=5):250.0\n",
+            "Yuksekligi giriniz:8\n",
+            "Dikdortgen prizmanin hacmi(Belirtilen genislik ve yukseklik):400.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def urun_bilgileri(urun_adi, *fiyatlar, **ozellikler):\n",
+        "  print(f\"Urun adi:{urun_adi}\")\n",
+        "\n",
+        "  if fiyatlar:\n",
+        "    print(f\"Fiyat:{fiyatlar[0]}\")\n",
+        "  else:\n",
+        "    print(\"Fiyat bilgisi yok.\")\n",
+        "\n",
+        "  renk = ozellikler.get(\"renk\", \"Belirtilmemis\")\n",
+        "  kategori = ozellikler.get(\"kategori\", \"Belirtilmemis\")\n",
+        "\n",
+        "  # Print statements for renk and kategori moved inside the function\n",
+        "  print(f\"renk:{renk}\")\n",
+        "  print(f\"Kategori:{kategori}\")\n",
+        "\n",
+        "urun_bilgileri(\"Elma\", 10, 12, 15, renk=\"Kirmizi\", kategori=\"Meyve\")\n",
+        "print(\"\\n----\\n\")\n",
+        "urun_bilgileri(\"Kitap\", kategori=\"Egitim\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VpjVf2lYKMOR",
+        "outputId": "79a4c4d5-da4c-48a2-a816-aef408ec49d6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Urun adi:Elma\n",
+            "Fiyat:10\n",
+            "renk:Kirmizi\n",
+            "Kategori:Meyve\n",
+            "\n",
+            "----\n",
+            "\n",
+            "Urun adi:Kitap\n",
+            "Fiyat bilgisi yok.\n",
+            "renk:Belirtilmemis\n",
+            "Kategori:Egitim\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def degistir(degisken):\n",
+        "  print(\"Fonksiyon icindeki deger:\",degisken)\n",
+        "  degisken = 42\n",
+        "  print(\"Fonksiyon icinde degistirilen deger:\",degisken)\n",
+        "\n",
+        "sayi = 10\n",
+        "print(\"Fonksiyon cagirmadan onceki deger:\", sayi)\n",
+        "degistir(sayi)\n",
+        "print(\"Fonksiyon cagirdiktan sonraki deger:\",sayi)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "85CuMcGKW8QV",
+        "outputId": "af7207b2-97e5-48bc-e329-69efc6e521bf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Fonksiyon cagirmadan onceki deger: 10\n",
+            "Fonksiyon icindeki deger: 10\n",
+            "Fonksiyon icinde degistirilen deger: 42\n",
+            "Fonksiyon cagirdiktan sonraki deger: 10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def degistir(degisken):\n",
+        "  print(\"Fonksiyon icindeki liste:\",degisken)\n",
+        "  degisken.append(42)\n",
+        "  print(\"Fonksiyon icinde degistirilen liste:\",degisken)\n",
+        "\n",
+        "liste = [1,2,3]\n",
+        "print(\"Fonksiyon cagirmadan onceki liste:\",liste)\n",
+        "degistir(liste)\n",
+        "print(\"Fonksiyon cagirdiktan sonraki liste:\",liste)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "42zg3vsqYHPM",
+        "outputId": "24e9a4f0-d74a-4fd7-e77c-acd6b5cef4f9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Fonksiyon cagirmadan onceki liste: [1, 2, 3]\n",
+            "Fonksiyon icindeki liste: [1, 2, 3]\n",
+            "Fonksiyon icinde degistirilen liste: [1, 2, 3, 42]\n",
+            "Fonksiyon cagirdiktan sonraki liste: [1, 2, 3, 42]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def istatistikler(sayilar):\n",
+        "  toplam = sum(sayilar)\n",
+        "  ortalama = toplam / len(sayilar)\n",
+        "  maksimum = max(sayilar)\n",
+        "  minimum = min(sayilar)\n",
+        "  return toplam,ortalama,maksimum,minimum\n",
+        "\n",
+        "sayilar = [10, 20, 30 ,40 ,50]\n",
+        "toplam,ortalama,maksimum,minimum = istatistikler(sayilar)\n",
+        "\n",
+        "print(\"Toplam:\",toplam)\n",
+        "print(f\"Ortalama:\",ortalama)\n",
+        "print(f\"Maksimum:\",maksimum)\n",
+        "print(f\"Minimum:\",minimum)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aPkmESKAaOs5",
+        "outputId": "3d74114d-8fe0-441b-9d0d-ecf0c9b6ddd6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Toplam: 150\n",
+            "Ortalama: 30.0\n",
+            "Maksimum: 50\n",
+            "Minimum: 10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "renkler = [\"siyah\",\"beyaz\",\"sari\",\"mavi\",\"yeşil\"]\n",
+        "print(len(renkler))\n",
+        "print(renkler[0])\n",
+        "print(renkler[1:4])\n",
+        "print(renkler[::2])\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YsdrJ0HESKOZ",
+        "outputId": "4d0bd1a7-26ee-4c12-90a6-47c35bc37477"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "siyah\n",
+            "['beyaz', 'sari', 'mavi']\n",
+            "['siyah', 'sari', 'yeşil']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "renkler = [\"siyah\",\"beyaz\",\"sari\",\"mavi\",\"yeşil\"]\n",
+        "print(renkler)\n",
+        "\n",
+        "renkler.append(\"gri\") #eleman ekleme\n",
+        "print(renkler)\n",
+        "\n",
+        "renkler.insert(0,\"gri\") #eleman ekleme\n",
+        "print(renkler)\n",
+        "\n",
+        "renkler.remove(\"sari\") #eleman silme\n",
+        "print(renkler)\n",
+        "\n",
+        "renkler2 = [\"turuncu\",\"pembe\"]\n",
+        "renkler.extend(renkler2) #listeleri birlestirme\n",
+        "print(renkler)\n",
+        "\n",
+        "renkler.pop() #son elemani siler\n",
+        "print(renkler)\n",
+        "\n",
+        "silinen = renkler.pop() #silinen elemani siler\n",
+        "print(renkler)\n",
+        "print(silinen)\n",
+        "\n",
+        "renkler.sort(reverse=True) #siralama\n",
+        "print(renkler)\n",
+        "\n",
+        "liste2 = sorted(renkler)\n",
+        "print(liste2)\n",
+        "print(renkler)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eCt706CUr6_W",
+        "outputId": "c0efbe76-14cc-4662-af05-863e3f8071bc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['siyah', 'beyaz', 'sari', 'mavi', 'yeşil']\n",
+            "['siyah', 'beyaz', 'sari', 'mavi', 'yeşil', 'gri']\n",
+            "['gri', 'siyah', 'beyaz', 'sari', 'mavi', 'yeşil', 'gri']\n",
+            "['gri', 'siyah', 'beyaz', 'mavi', 'yeşil', 'gri']\n",
+            "['gri', 'siyah', 'beyaz', 'mavi', 'yeşil', 'gri', 'turuncu', 'pembe']\n",
+            "['gri', 'siyah', 'beyaz', 'mavi', 'yeşil', 'gri', 'turuncu']\n",
+            "['gri', 'siyah', 'beyaz', 'mavi', 'yeşil', 'gri']\n",
+            "turuncu\n",
+            "['yeşil', 'siyah', 'mavi', 'gri', 'gri', 'beyaz']\n",
+            "['beyaz', 'gri', 'gri', 'mavi', 'siyah', 'yeşil']\n",
+            "['yeşil', 'siyah', 'mavi', 'gri', 'gri', 'beyaz']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "renkler = [\"siyah\",\"beyaz\",\"sari\",\"mavi\",\"yeşil\"]\n",
+        "\n",
+        "sayilar = [1,2,3,4,5,6,7,8]\n",
+        "\n",
+        "print(min(renkler))\n",
+        "print(max(renkler))\n",
+        "print(min(sayilar))\n",
+        "print(max(sayilar))\n",
+        "\n",
+        "print(sum(sayilar)) #sayilari toplar"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mWYDP0teBGVf",
+        "outputId": "7ca3e4a4-1d11-4c66-c4cd-c90a135683f9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "beyaz\n",
+            "yeşil\n",
+            "1\n",
+            "8\n",
+            "36\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "renkler = [\"siyah\",\"beyaz\",\"sari\",\"mavi\",\"yeşil\"]\n",
+        "\n",
+        "for i in renkler:\n",
+        "  print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dLpGR-uyBzpa",
+        "outputId": "29b85466-f6d1-4de1-dbed-a41c9f326cb2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "siyah\n",
+            "beyaz\n",
+            "sari\n",
+            "mavi\n",
+            "yeşil\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "renkler = [\"siyah\",\"beyaz\",\"sari\",\"mavi\",\"yeşil\"]\n",
+        "\n",
+        "print(list(enumerate(renkler)))\n",
+        "\n",
+        "print(list(enumerate(renkler,start=3)))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Rsxi0yPZH662",
+        "outputId": "dcc5edde-7ad1-4065-ff7d-35c1332ffc72"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[(0, 'siyah'), (1, 'beyaz'), (2, 'sari'), (3, 'mavi'), (4, 'yeşil')]\n",
+            "[(3, 'siyah'), (4, 'beyaz'), (5, 'sari'), (6, 'mavi'), (7, 'yeşil')]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "renkler = [\"siyah\",\"beyaz\",\"sari\",\"mavi\",\"yeşil\"]\n",
+        "\n",
+        "print(\"siyah\" in renkler) #siyah renkler listesinin icinde var mi"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "b0Ey9uGwIeJR",
+        "outputId": "b71a15a6-61a3-4308-e9d0-a32ae71ac30d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "liste = [1,2,3,4,5,6]\n",
+        "\n",
+        "for rakam in liste:\n",
+        "  print(rakam)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UcWrmGP8I-IK",
+        "outputId": "54ab81eb-e531-4ac4-c717-fb217eeac9ea"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(0,10): #ilk siniri dahil eder ama son siniri dahil etmez\n",
+        "  print(i)\n",
+        "\n",
+        "for i in range(1,17,2): #ikiser araliklarla yazar\n",
+        "  print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "m3ITqQ6cKNGj",
+        "outputId": "96c562e8-61a5-40e6-a384-7161b5b11cce"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n",
+            "1\n",
+            "3\n",
+            "5\n",
+            "7\n",
+            "9\n",
+            "11\n",
+            "13\n",
+            "15\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sonuc = 1\n",
+        "for i in range(0,10):\n",
+        "  sonuc *= 2\n",
+        "\n",
+        "print(sonuc)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AI8n4Hg_Ks5G",
+        "outputId": "8934cf66-9dc9-47d3-96db-b79d9a9593ac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1024\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#tuple(demet)\n",
+        "\n",
+        "demet  = (\"sari\",\"mavi\", \"yesil\",\"kirmizi\",\"siyah\")\n",
+        "\n",
+        "print(len(demet))\n"
+      ],
+      "metadata": {
+        "id": "NxJMCIYijj84",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "721eb0ef-3ef6-4edb-cdf8-386f90c2ccc0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#kume\n",
+        "#kumeler sirasizdir\n",
+        "\n",
+        "kume = {\"sari\",\"mavi\", \"yesil\",\"kirmizi\",\"siyah\"}\n",
+        "print(kume)\n",
+        "\n",
+        "for renk in kume:\n",
+        "  print(renk)\n",
+        "\n",
+        "kume.add(\"pembe\") #kumeye eleman ekleme\n",
+        "print(kume)\n",
+        "\n",
+        "kume.remove(\"sari\") #kumeden eleman silme\n",
+        "print(kume)\n",
+        "\n",
+        "kume.discard(\"gri\") #kumede bu eleman bulunmadigi icin silemez ama hata vermez\n",
+        "print(kume)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "2FSHVL0SkZew",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "3dc864a9-94ed-45ab-edfd-089951ca2ef7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'siyah', 'yesil', 'kirmizi', 'mavi', 'sari'}\n",
+            "siyah\n",
+            "yesil\n",
+            "kirmizi\n",
+            "mavi\n",
+            "sari\n",
+            "{'siyah', 'yesil', 'kirmizi', 'pembe', 'mavi', 'sari'}\n",
+            "{'siyah', 'yesil', 'kirmizi', 'pembe', 'mavi'}\n",
+            "{'siyah', 'yesil', 'kirmizi', 'pembe', 'mavi'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "kume1 = {\"sari\",\"mavi\", \"yesil\",\"kirmizi\",\"siyah\"}\n",
+        "kume2 = {\"sari\",\"mavi\", \"yesil\",\"beyaz\",\"gri\"}\n",
+        "\n",
+        "print(kume1.intersection(kume2)) #kesisim\n",
+        "\n",
+        "print(kume1.union(kume2)) #birlesim\n",
+        "\n",
+        "print(kume1.difference(kume2)) #fark\n",
+        "\n",
+        "print(\"sari\" in kume1)\n",
+        "print(\"beyaz\" in kume1)"
+      ],
+      "metadata": {
+        "id": "9g80-lAElq45",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "793ae4ff-388d-42f4-960b-f084db9e1c72"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'yesil', 'sari', 'mavi'}\n",
+            "{'gri', 'beyaz', 'mavi', 'sari', 'yesil', 'siyah', 'kirmizi'}\n",
+            "{'siyah', 'kirmizi'}\n",
+            "True\n",
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#bos bir liste kume ve demet olusturmak istiyosak ne yapmaliyiz\n",
+        "\n",
+        "bosliste1 = []\n",
+        "bosliste2 = list()\n",
+        "\n",
+        "bosdemet1 = ()\n",
+        "bosdemet2 = tuple()\n",
+        "\n",
+        "boskume1 = set()\n",
+        "#boskume2 = {} bu bir sozluktur\n",
+        "\n",
+        "python = set(\"PYTHON\")\n",
+        "print(python)"
+      ],
+      "metadata": {
+        "id": "bENVs4Acmn0w",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "697821c8-22ea-4d57-be82-8619798ff4c0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'O', 'P', 'Y', 'H', 'T', 'N'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#sozluk\n",
+        "kisi = {\"isim\" : \"ali\",\"yas\" : 20,\"cinsiyet\" : \"m\", \"hobiler\" : [\"sinema\",\"konser\",\"yazilim\"]}\n",
+        "print(kisi[\"isim\"])\n",
+        "\n",
+        "#print(kisi)\n",
+        "\n",
+        "#kisi[\"isim\"] = \"ahmet\"\n",
+        "#print(kisi)\n",
+        "\n",
+        "#kisi.update({\"isim\" :\"ahmet\", \"yas\":30})\n",
+        "#print(kisi)\n",
+        "\n",
+        "kisi[\"id\"] = 12345\n",
+        "print(kisi)\n",
+        "\n",
+        "del kisi[\"id\"]\n",
+        "print(kisi)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ma-yEX9MEpsG",
+        "outputId": "3dab6d4e-0d43-4206-94f1-d4b1c329c8f5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ali\n",
+            "{'isim': 'ali', 'yas': 20, 'cinsiyet': 'm', 'hobiler': ['sinema', 'konser', 'yazilim'], 'id': 12345}\n",
+            "{'isim': 'ali', 'yas': 20, 'cinsiyet': 'm', 'hobiler': ['sinema', 'konser', 'yazilim']}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "kisi = {\"isim\" : \"ali\",\"yas\" : 20,\"cinsiyet\" : \"m\", \"hobiler\" : [\"sinema\",\"konser\",\"yazilim\"]}\n",
+        "\n",
+        "for x in kisi:\n",
+        "  print(kisi[x])\n",
+        "\n",
+        "print(kisi.keys())\n",
+        "\n",
+        "print(kisi.values())\n",
+        "\n",
+        "print(kisi.items())\n",
+        "\n",
+        "for k,v in kisi.items():\n",
+        "  print(k,v)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "g3KKIDlsI6B8",
+        "outputId": "2a42851d-25f4-4fc1-de6e-532a08a829c0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ali\n",
+            "20\n",
+            "m\n",
+            "['sinema', 'konser', 'yazilim']\n",
+            "dict_keys(['isim', 'yas', 'cinsiyet', 'hobiler'])\n",
+            "dict_values(['ali', 20, 'm', ['sinema', 'konser', 'yazilim']])\n",
+            "dict_items([('isim', 'ali'), ('yas', 20), ('cinsiyet', 'm'), ('hobiler', ['sinema', 'konser', 'yazilim'])])\n",
+            "isim ali\n",
+            "yas 20\n",
+            "cinsiyet m\n",
+            "hobiler ['sinema', 'konser', 'yazilim']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#ekrandan alinan bir sayinin faktoriyelini hesaplayan bir program yaziniz\n",
+        "\n",
+        "sayi = input(\"bir sayi giriniz:\")\n",
+        "sayi = int(sayi) #tam sayiya cevirir cunku string halindedir\n",
+        "\n",
+        "faktoriyel = 1\n",
+        "for i in range(1,sayi+1):\n",
+        "  faktoriyel *= i\n",
+        "print(f\"{sayi}!={faktoriyel}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bCGK-dncLeyf",
+        "outputId": "e674ad2a-e61d-438a-f006-9a88b6a12fd6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "bir sayi giriniz:5\n",
+            "5!=120\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sayi = input(\"bir sayi giriniz:\")\n",
+        "sayi = int(sayi)\n",
+        "\n",
+        "faktoriyel = 1\n",
+        "i = 2\n",
+        "while i<=sayi:\n",
+        "  faktoriyel *= i\n",
+        "  i += 1\n",
+        "print(f\"{sayi}!={faktoriyel}\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9lsURW0XMxrb",
+        "outputId": "1d5212b4-addf-4902-eeaa-66f35f41a154"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "bir sayi giriniz:5\n",
+            "5!=120\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#ekrandan alinan bir sayinin asal olup ollmadıgını kontrol eden bir program yaziniz\n",
+        "\n",
+        "sayi = int(input(\"bir tam sayi giriniz:\"))\n",
+        "\n",
+        "if sayi < 2:\n",
+        "  print(f\"{sayi},asal degildir.\")\n",
+        "else:\n",
+        "  for i in range(2,sayi):\n",
+        "    if sayi % i == 0:\n",
+        "      print(f\"{sayi},asal degildir.\")\n",
+        "      break\n",
+        "  else:\n",
+        "    print(f\"{sayi},asaldir.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PW1DP6cwNgCw",
+        "outputId": "1067e690-8e95-4ab1-f320-f4a284a64411"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "bir tam sayi giriniz:9\n",
+            "9,asal degildir.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bilgi_ver():\n",
+        "  print(\"islem basarili.\")\n",
+        "\n",
+        "bilgi_ver()\n",
+        "bilgi_ver()\n",
+        "bilgi_ver()\n",
+        "bilgi_ver()\n",
+        "bilgi_ver()"
+      ],
+      "metadata": {
+        "id": "E98sUE8VS-P3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "fecc3203-5526-465b-dc80-5326aa85da66"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "islem basarili.\n",
+            "islem basarili.\n",
+            "islem basarili.\n",
+            "islem basarili.\n",
+            "islem basarili.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bilgi_ver():\n",
+        "  print(\"islem basarili.\")\n",
+        "  print(\"blogun icerisi\")\n",
+        "\n",
+        "bilgi_ver()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KBNGlBwria_W",
+        "outputId": "bbd23984-9a0e-4494-d004-d71fdcef22a2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "islem basarili.\n",
+            "blogun icerisi\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def selamla(isim):\n",
+        "  print(\"merhaba \"+isim)\n",
+        "\n",
+        "selamla(\"ali\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MAUo-ouWitgp",
+        "outputId": "4261063d-0f83-4b80-f689-426b32219fec"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "merhaba ali\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def topla(x,y):\n",
+        "  print(f\"x+y={x+y}\")\n",
+        "\n",
+        "topla(3,6)\n",
+        "\n",
+        "def carp(x,y):\n",
+        "  print(f\"x+y={x*y}\")\n",
+        "\n",
+        "carp(3,6)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "t1-dZCVpjDTC",
+        "outputId": "d4bdf87c-f2a6-4808-beba-ed6581f914c3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "x+y=9\n",
+            "x+y=18\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def ortalama_hesapla(liste):\n",
+        "  toplam = sum(liste)\n",
+        "  adet = len(liste)\n",
+        "  ortalama = toplam/adet\n",
+        "  print(f\"girilen sayilarin ortalamasi:{ortalama}\")\n",
+        "\n",
+        "ortalama_hesapla([1,2,3,4,5,6])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z1Ir11zSjm_R",
+        "outputId": "642499fe-348a-4634-94cd-fe049c185d1b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "girilen sayilarin ortalamasi:3.5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def buyuk_harfe_cevir(metin):\n",
+        "  metin = metin.upper()\n",
+        "  print(metin)\n",
+        "\n",
+        "buyuk_harfe_cevir(\"ANsYtUVb\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TWOFARGbkdvU",
+        "outputId": "15448c7e-cd49-4bd8-ebd3-6a9f65a4d7fe"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ANSYTUVB\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def indirim_yap(fiyat,yuzde):\n",
+        "  indirim_miktari = fiyat * (yuzde / 100)\n",
+        "  indirimli_fiyat = fiyat - indirim_miktari\n",
+        "  print(f\"indirimli tutar:{indirimli_fiyat}\")\n",
+        "\n",
+        "indirim_yap(50,10)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LyYqPBHal-mJ",
+        "outputId": "d2796d91-6a2c-48d8-abc1-647139421f8e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "indirimli tutar:45.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def ortalama_hesapla(x,y):\n",
+        "  return (x+y) / 2\n",
+        "\n",
+        "print(ortalama_hesapla(3,7))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XvQ0x1ZWnDQu",
+        "outputId": "b1b727d8-9300-4101-a6d2-a5f2aff2cb6f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "\n",
+        "sonuc = math.factorial(6) #faktoriyel\n",
+        "print(sonuc)\n",
+        "\n",
+        "sonuc = math.sqrt(65) #karekok fonks\n",
+        "print(sonuc)\n",
+        "\n",
+        "sonuc = math.fabs(65) #mutlak deger fonksiyonu\n",
+        "print(int(sonuc))\n",
+        "\n",
+        "taban = 2\n",
+        "us = 3\n",
+        "ussu = math.pow(taban,us)\n",
+        "print(f\"{taban} uzeri {us}:\",ussu)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fRNvgrqeoFKj",
+        "outputId": "5c38b3a4-ffaf-4800-fd46-eabf7b509e84"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "720\n",
+            "8.06225774829855\n",
+            "65\n",
+            "2 uzeri 3: 8.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import factorial\n",
+        "\n",
+        "sonuc = factorial(5)\n",
+        "print(sonuc)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DHcZQwgPo5ET",
+        "outputId": "194b2799-b21a-48b8-fa04-802603796230"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "120\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os #işletim sistemi ile ilgili işlemler icin\n",
+        "import time #saatle ilgili ayarlamalaricin\n",
+        "import datetime #tarihle ilgili islemler"
+      ],
+      "metadata": {
+        "id": "QM5PfZGmpOpO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "rastgele_tamsayi = random.randint(1,100) #1 ile 100 arasinda rastgele sayi\n",
+        "print(f\"rastgele tam sayi:{rastgele_tamsayi}\")\n",
+        "\n",
+        "rastgele_tamsayi = random.random() #0 ile 1 arasinda rastgele sayi\n",
+        "print(f\"0 ile 1 arasinda rastgele tam sayi:{rastgele_tamsayi:.2f}\")\n",
+        "\n",
+        "rastgele_ondalik = random.uniform(0,1)\n",
+        "print(f\"rastgele ondalikli sayi:{rastgele_ondalik:.2f}\")\n",
+        "\n",
+        "liste = [\"elma\",\"armut\",\"muz\",\"portakal\"] #listeden rastgele bir eleman secme\n",
+        "rastgele_meyve = random.choice(liste)\n",
+        "print(f\"rastgele meyve:{rastgele_meyve}\")\n",
+        "\n",
+        "karisik_liste = [1,2,3,4,5] #liste elemanlarını karıştırma\n",
+        "random.shuffle(karisik_liste)\n",
+        "print(f\"karisik liste:{karisik_liste}\")\n",
+        "\n",
+        "ornek_liste = [10,20,30,40,50] #belirli bir sayida rastgele ornek secme\n",
+        "rastgele_ornek = random.sample(ornek_liste,3)\n",
+        "print(f\"rastgele ornek liste:{rastgele_ornek}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WPXY9qkyqVP2",
+        "outputId": "59a5c584-1cc6-4121-bb91-fe2b2a3f0fb8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "rastgele tam sayi:76\n",
+            "0 ile 1 arasinda rastgele tam sayi:0.47\n",
+            "rastgele ondalikli sayi:0.83\n",
+            "rastgele meyve:elma\n",
+            "karisik liste:[4, 5, 2, 3, 1]\n",
+            "rastgele ornek liste:[10, 30, 50]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def listelere_ayir(string):\n",
+        "  sesli_harfler = []\n",
+        "  sessiz_harfler = []\n",
+        "  diger_karakterler = []\n",
+        "\n",
+        "  sesli_harfler_turkce = \"aeıioöuüAEIİOÖUÜ\"\n",
+        "  for karakter in string:\n",
+        "    if karakter.isalpha(): #sesli sessiz kontrolu yapar\n",
+        "      if karakter in sesli_harfler_turkce:\n",
+        "        sesli_harfler.append(karakter)\n",
+        "      else:\n",
+        "        sessiz_harfler.append(karakter)\n",
+        "    else:\n",
+        "        diger_karakterler.append(karakter)\n",
+        "\n",
+        "  return sesli_harfler,sessiz_harfler,diger_karakterler\n",
+        "\n",
+        "metin = input(\"bir string giriniz:\")\n",
+        "\n",
+        "sesli,sessiz,diger = listelere_ayir(metin)\n",
+        "\n",
+        "print(\"sesli harfler:\",sesli)\n",
+        "print(\"sessiz harfler:\",sessiz)\n",
+        "print(\"diger karakterler:\",diger)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1KFCn8Havkyw",
+        "outputId": "439c57ea-7d13-4521-fd88-4eddd01fd172"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "bir string giriniz:abcd785\n",
+            "sesli harfler: ['a']\n",
+            "sessiz harfler: ['b', 'c', 'd']\n",
+            "diger karakterler: ['7', '8', '5']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "filmler = {\n",
+        "    1: {\n",
+        "        \"ad\": \"Recep ivedik 1\",\n",
+        "        \"seanslar\": {\n",
+        "            \"12:00\": {\"koltuklar\": [True]*10},  # True: boş\n",
+        "            \"15:00\": {\"koltuklar\": [True]*10},\n",
+        "        }\n",
+        "    },\n",
+        "    2: {\n",
+        "        \"ad\": \"Recep İvedik 2\",\n",
+        "        \"seanslar\": {\n",
+        "            \"13:00\": {\"koltuklar\": [True]*10},\n",
+        "            \"18:00\": {\"koltuklar\": [True]*10},\n",
+        "        }\n",
+        "    }\n",
+        "}\n",
+        "\n",
+        "def film_listesini_goster():\n",
+        "    print(\"Mevcut Filmler:\")\n",
+        "    for id, film in filmler.items():\n",
+        "        print(f\"{id}. {film['ad']}\")\n",
+        "\n",
+        "def seanslari_goster(film_id):\n",
+        "    print(f\"\\n {filmler[film_id]['ad']} için seanslar:\")\n",
+        "    for saat in filmler[film_id]['seanslar']:\n",
+        "        print(f\"{saat}\")\n",
+        "\n",
+        "def koltuklari_goster(film_id, saat):\n",
+        "    koltuklar = filmler[film_id]['seanslar'][saat][\"koltuklar\"]\n",
+        "    print(\"\\n Koltuklar (0: Dolu, 1: Boş):\")\n",
+        "    for i, durum in enumerate(koltuklar):\n",
+        "        print(f\"{i+1}: {'1' if durum else '0'}\", end=\"  \")\n",
+        "    print()\n",
+        "\n",
+        "def rezervasyon_yap():\n",
+        "    film_listesini_goster()\n",
+        "    film_id = int(input(\"\\n Film numarasını seçin: \"))\n",
+        "    seanslari_goster(film_id)\n",
+        "    saat = input(\"Seans saatini girin (örn: 12:00): \")\n",
+        "    koltuklari_goster(film_id, saat)\n",
+        "\n",
+        "    koltuk_no = int(input(\"Rezervasyon yapmak istediğiniz koltuk numarası: \"))\n",
+        "    koltuklar = filmler[film_id]['seanslar'][saat][\"koltuklar\"]\n",
+        "\n",
+        "    if 1 <= koltuk_no <= len(koltuklar) and koltuklar[koltuk_no - 1]:\n",
+        "        koltuklar[koltuk_no - 1] = False\n",
+        "        print(\"Rezervasyon başarılı!\")\n",
+        "    else:\n",
+        "        print(\"Bu koltuk zaten dolu veya geçersiz bir numara.\")\n",
+        "\n",
+        "while True:\n",
+        "    rezervasyon_yap()\n",
+        "    devam = input(\"Yeni bir rezervasyon yapmak istiyor musunuz? (e/h): \")\n",
+        "    if devam.lower() != 'e':\n",
+        "        print(\"İyi seyirler!\")\n",
+        "        break\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MPBTGsNPjB6_",
+        "outputId": "7accb9f1-246d-482c-9965-c9e3c6f85636"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mevcut Filmler:\n",
+            "1. Recep ivedik 1\n",
+            "2. Recep İvedik 2\n",
+            "\n",
+            " Film numarasını seçin: 1\n",
+            "\n",
+            " Recep ivedik 1 için seanslar:\n",
+            "12:00\n",
+            "15:00\n",
+            "Seans saatini girin (örn: 12:00): 15:00\n",
+            "\n",
+            " Koltuklar (0: Dolu, 1: Boş):\n",
+            "1: 1  2: 1  3: 1  4: 1  5: 1  6: 1  7: 1  8: 1  9: 1  10: 1  \n",
+            "Rezervasyon yapmak istediğiniz koltuk numarası: 9\n",
+            "Rezervasyon başarılı!\n",
+            "Yeni bir rezervasyon yapmak istiyor musunuz? (e/h): h\n",
+            "İyi seyirler!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#sınıf ve örnek kavramları\n",
+        "#class olusturma\n",
+        "#ozellik ve metotlar\n",
+        "\n",
+        "class calisan:\n",
+        "  def __init__(self,name,surname,age):\n",
+        "\n",
+        "    self.name = name\n",
+        "    self.surname = surname\n",
+        "    self.age = age\n",
+        "  def show_info(self):\n",
+        "    print(f\"Ad:{self.name} Soyad:{self.surname} Yas:{self.age}\")\n",
+        "\n",
+        "calisan1 = calisan(\"ali\",\"veli\",20)\n",
+        "print(calisan1.name,calisan1.surname,calisan1.age)\n",
+        "\n",
+        "calisan2 = calisan(\"ahmet\",\"mehmet\",30)\n",
+        "print(calisan2.name,calisan2.surname,calisan2.age)\n",
+        "\n",
+        "calisan1.show_info()\n",
+        "calisan2.show_info()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RPZzWIQrUTmE",
+        "outputId": "f78b0e63-b942-4b54-ff43-417b55abc0b5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ali veli 20\n",
+            "ahmet mehmet 30\n",
+            "Ad:ali Soyad:veli Yas:20\n",
+            "Ad:ahmet Soyad:mehmet Yas:30\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class calisan:\n",
+        "\n",
+        "  def __init__(self,isim,maas):\n",
+        "    self.isim = isim\n",
+        "    self.maas = maas\n",
+        "\n",
+        "calisan1 = calisan(\"ali\",5000)\n",
+        "calisan2 = calisan(\"ahmet\",6000)\n",
+        "\n",
+        "print(calisan1.__dict__)\n",
+        "print(calisan2.__dict__)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9f_xfQyEcjlu",
+        "outputId": "aa69670f-e480-4f3a-e4a7-9d1bfd271fd1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'isim': 'ali', 'maas': 5000}\n",
+            "{'isim': 'ahmet', 'maas': 6000}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class kisi:\n",
+        "  zam_orani = 1.1\n",
+        "  def __init__(self,isim,yas):\n",
+        "    self.isim = isim\n",
+        "    self.yas = yas\n",
+        "kisi.zam_orani = 1.2\n",
+        "kisi1 = kisi(\"ali\",20)\n",
+        "print(kisi1.isim)\n",
+        "\n",
+        "kisi2 = kisi(\"ahmet\",30)\n",
+        "print(kisi2.yas)\n",
+        "print(kisi.zam_orani)\n",
+        "print(kisi1.zam_orani)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SQ1KtRFhl9q8",
+        "outputId": "44979e02-77f0-4f3b-f2cc-260d42db6506"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ali\n",
+            "30\n",
+            "1.1\n",
+            "1.1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class kisi:\n",
+        "  zam_orani = 1.1\n",
+        "  kisi_sayisi = 0\n",
+        "  def __init__(self,isim,yas):\n",
+        "    self.isim = isim\n",
+        "    self.yas = yas\n",
+        "    kisi.kisi_sayisi += 1\n",
+        "\n",
+        "print(kisi.kisi_sayisi)\n",
+        "kisi1 = kisi(\"ali\",20)\n",
+        "kisi2 = kisi(\"ahmet\",30)\n",
+        "print(kisi.kisi_sayisi)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1tvxl_g2nb1I",
+        "outputId": "b2eac82e-f93b-4d1e-de9f-c3b35fe8f633"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class kisi:\n",
+        "  zam_orani = 1.1\n",
+        "  kisi_sayisi = 0\n",
+        "  def __init__(self,isim,yas):\n",
+        "    self.isim = isim\n",
+        "    self.yas = yas\n",
+        "    kisi.kisi_sayisi += 1\n",
+        "\n",
+        "  def bilgilerini_soyle(self):   #instance method\n",
+        "    return f\"ad:{self.isim} yas:{self.yas}\"\n",
+        "\n",
+        "  @classmethod\n",
+        "  def kisi_sayisini_soyle(cls):\n",
+        "    return cls.kisi_sayisi\n",
+        "\n",
+        "  @classmethod\n",
+        "  def string_ile_olustur(cls,string):\n",
+        "    isim,yas = string.split(\"-\")\n",
+        "    return cls(isim,yas)\n",
+        "\n",
+        "kisi1 = kisi(\"ali\",20)\n",
+        "kisi2 = kisi(\"ahmet\",30)\n",
+        "\n",
+        "kisi3 = kisi.string_ile_olustur(\"ayse-25\")\n",
+        "print(kisi.kisi_sayisini_soyle())\n",
+        "print(kisi.kisi_sayisini_soyle())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-u_RBsb4oMuL",
+        "outputId": "a278c868-4a94-4fcd-d71c-4a18efc54eaf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n",
+            "3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class calisan:\n",
+        "  zam_orani = 1.1\n",
+        "  def __init__(self,isim,soyisim,maas):\n",
+        "    self.isim = isim\n",
+        "    self.soyisim = soyisim\n",
+        "    self.maas = maas\n",
+        "    self.email = isim + soyisim + \"@sirket.com\"\n",
+        "\n",
+        "  def bilgileri_goster(self):\n",
+        "    return \"ad:{} soyad:{} maas:{} email:{}\".format(self.isim,self.soyisim,self.maas,self.email)\n",
+        "\n",
+        "calisan1 = calisan(\"ali\",\"veli\",5000)\n",
+        "calisan2 = calisan(\"ahmet\",\"uzun\",6000)\n",
+        "\n",
+        "class yazilimci(calisan):\n",
+        "  zam_orani = 1.3\n",
+        "\n",
+        "yazilimci1 = yazilimci(\"ayse\",\"yildiz\",7000)\n",
+        "yazilimci2 = yazilimci(\"fatma\",\"yilmaz\",8000)\n",
+        "print(calisan2.zam_orani)\n",
+        "print(yazilimci1.zam_orani)\n",
+        "print(yazilimci1.email)\n",
+        "print(calisan2.bilgileri_goster())\n",
+        "print(yazilimci1.bilgileri_goster())\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SrmatMXT0xK0",
+        "outputId": "5fa5a733-3f4e-4987-e8f2-5e35bc7b497d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1.1\n",
+            "1.3\n",
+            "ayseyildiz@sirket.com\n",
+            "ad:ahmet soyad:uzun maas:6000 email:ahmetuzun@sirket.com\n",
+            "ad:ayse soyad:yildiz maas:7000 email:ayseyildiz@sirket.com\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "gecme_notu = 50\n",
+        "sinav1not = int(input(\"birinci sınav notunu giriniz:\"))\n",
+        "sinav2not = int(input(\"ikinci sınav notunu giriniz:\"))\n",
+        "\n",
+        "ortalama_hesapla = (sinav1not + sinav2not) / 2\n",
+        "\n",
+        "if ortalama_hesapla >= gecme_notu:\n",
+        "  print(\"geçti\")\n",
+        "\n",
+        "else:\n",
+        "  print(\"kaldi\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qCZ150u8M2WB",
+        "outputId": "328b49d5-dfa5-4373-f6c1-122d461d545e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "birinci sınav notunu giriniz:80\n",
+            "ikinci sınav notunu giriniz:20\n",
+            "geçti\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sayi = int(input(\"bir sayi giriniz:\"))\n",
+        "\n",
+        "if sayi > 0:\n",
+        "  print(\"sayi pozitiftir\")\n",
+        "\n",
+        "elif sayi < 0:\n",
+        "  print(\"sayi negatiftir\")\n",
+        "\n",
+        "else:\n",
+        "  print(\"sayi sifirdir\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aIZEBqWb851w",
+        "outputId": "0ffc6e44-ed06-4e50-e5c9-1d81c5a7ab4b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "bir sayi giriniz:-8\n",
+            "sayi negatiftir\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "yas = int(input(\"yasinizi giriniz:\"))\n",
+        "\n",
+        "if yas >=18:\n",
+        "  print(\"oy kullanabilir.\")\n",
+        "else:\n",
+        "  print(\"oy kullanamaz.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xfbT_xYrIF-T",
+        "outputId": "2bc6ac1e-74af-4ee1-c725-ecfa872696a3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "yasinizi giriniz:52\n",
+            "oy kullanabilir.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "toplam = 0\n",
+        "\n",
+        "for sayi in range(1,101):\n",
+        "  toplam += sayi\n",
+        "\n",
+        "print(f\"1'den 100'e kadar olan sayilarin toplami:{toplam}\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QbhxbmAkIxOY",
+        "outputId": "66ab8752-c820-43ab-f9ca-cc3f885dface"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1'den 100'e kadar olan sayilarin toplami:5050\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "toplam = 0\n",
+        "adet = 0\n",
+        "\n",
+        "while True:\n",
+        "  sayi = int(input(\"bir sayi giriniz:\"))\n",
+        "\n",
+        "  if sayi == 0:\n",
+        "    break\n",
+        "\n",
+        "  toplam += sayi\n",
+        "  adet += 1\n",
+        "\n",
+        "  ortalama = toplam / adet\n",
+        "  print(f\"girilen sayilarin ortalamasi:{ortalama}\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0fwYrFzvM1FB",
+        "outputId": "191f38f2-f76a-4b14-c356-130f63f31b09"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "bir sayi giriniz:5\n",
+            "girilen sayilarin ortalamasi:5.0\n",
+            "bir sayi giriniz:8\n",
+            "girilen sayilarin ortalamasi:6.5\n",
+            "bir sayi giriniz:0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "kelime = input(\"bir kelime giriniz:\")\n",
+        "\n",
+        "for harf in kelime:\n",
+        "  print(harf)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sJdEGQelZmKC",
+        "outputId": "fddbcccd-98da-4c04-d4eb-d67ea48d9ca0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "bir kelime giriniz:elma\n",
+            "e\n",
+            "l\n",
+            "m\n",
+            "a\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sayi1 = int(input(\"sayi1:\"))\n",
+        "sayi2 = int(input(\"sayi2:\"))\n",
+        "\n",
+        "def toplam(sayi1,sayi2):\n",
+        "  return (sayi1 + sayi2)\n",
+        "\n",
+        "print(toplam(sayi1,sayi2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AWr2gLK3bcFH",
+        "outputId": "ccefbb79-dd2b-46cf-8b23-b5a07cecb4cb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "sayi1:5\n",
+            "sayi2:8\n",
+            "13\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def kullanici_karsila(isim= \"ziyaretci\"):\n",
+        "  print(\"Hos geldiniz,\",isim)\n",
+        "\n",
+        "kullanici_karsila()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2a3fEKtvfVi6",
+        "outputId": "bca3d80c-40b5-422d-9afd-852d5372e060"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hos geldiniz, ziyaretci\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "vize = int(input(\"vize notunu giriniz:\"))\n",
+        "final = int(input(\"final notunu giriniz:\"))\n",
+        "\n",
+        "def sinav_ortalama(vize,final):\n",
+        "  return (vize + final) / 2\n",
+        "\n",
+        "print(sinav_ortalama(vize,final))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "w6iIY-P0gwMw",
+        "outputId": "6eb6338f-585f-4c06-b2c2-ff40da31095c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "vize notunu giriniz:50\n",
+            "final notunu giriniz:80\n",
+            "65.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class ogrenci:\n",
+        "  def __init__(self,isim,soyad,numara):\n",
+        "    self.isim = isim\n",
+        "    self.soyad = soyad\n",
+        "    self.numara = numara\n",
+        "\n",
+        "def bilgileri_goster(self,isim,soyad,numara):\n",
+        "  print(f\"isim:{self.isim} soyad:{self.soyad} numara:{self.numara}\")\n",
+        "\n",
+        "  ogrenci1 = ogrenci(\"ali\",\"veli\",1234)\n",
+        "\n",
+        "print(ogrenci1.isim,ogrenci1.soyad,ogrenci1.numara)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ejC57ebSh867",
+        "outputId": "d2c54c20-8b50-4c6e-c997-19cecfaa8a46"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ali kemal 2566\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
