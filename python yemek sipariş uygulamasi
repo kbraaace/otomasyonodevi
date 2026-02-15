@@ -1,0 +1,153 @@
+import sys
+import sqlite3
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QComboBox,
+    QCheckBox, QTableWidget, QTableWidgetItem, QVBoxLayout, QGridLayout,
+    QCalendarWidget
+)
+from PyQt5.QtCore import QDate
+
+class YemekSiparisUygulamasi(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Yemek Sipariş Sistemi")
+        self.setGeometry(100, 100, 1000, 600)
+        self.veritabani_baglantisi_olustur()
+        self.setup_ui()
+
+    def veritabani_baglantisi_olustur(self):
+        self.conn = sqlite3.connect("siparisler.db")
+        self.cursor = self.conn.cursor()
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS siparisler (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                isim TEXT,
+                siparis_no TEXT,
+                adres TEXT,
+                atistirmalik TEXT,
+                yemek TEXT,
+                icecek TEXT,
+                tarih TEXT,
+                teslimat TEXT
+            )
+        """)
+        self.conn.commit()
+
+    def setup_ui(self):
+        self.input_ismi = QLineEdit()
+        self.input_siparis_no = QLineEdit()
+        self.input_adres = QLineEdit()
+
+        self.combo_yemek = QComboBox()
+        self.combo_yemek.addItems(["Çiğköfte Dürüm", "Kebap", "Pizza", "Burger"])
+
+        self.combo_icecek = QComboBox()
+        self.combo_icecek.addItems(["Ayran", "Kola", "Su", "Meyve Suyu"])
+
+        self.combo_atistirmalik = QComboBox()
+        self.combo_atistirmalik.addItems(["Puding", "Kurabiye", "Cips"])
+
+        self.takvim = QCalendarWidget()
+        self.takvim.setGridVisible(True)
+        self.takvim.setSelectedDate(QDate.currentDate())
+
+        self.check_gel_al = QCheckBox("Gel Al")
+        self.check_tikla_gelsin = QCheckBox("Tıkla Gelsin")
+
+        self.tablo = QTableWidget()
+        self.tablo.setColumnCount(7)
+        self.tablo.setHorizontalHeaderLabels([
+            "İsim", "Sipariş No", "Atıştırmalık", "Yemek", "İçecek", "Tarih", "Teslimat"
+        ])
+
+        self.btn_kayit_ekle = QPushButton("Kayıt Ekle")
+        self.btn_sil = QPushButton("Sil")
+        self.btn_ara = QPushButton("Ara")
+        self.btn_guncelle = QPushButton("Güncelle")
+        self.btn_listele = QPushButton("Listele")
+        self.btn_cikis = QPushButton("Çıkış")
+
+        self.btn_kayit_ekle.clicked.connect(self.kayit_ekle)
+        self.btn_listele.clicked.connect(self.veritabanindan_listele)
+        self.btn_cikis.clicked.connect(self.close)
+
+        layout = QGridLayout()
+
+        layout.addWidget(QLabel("Müşteri İsmi"), 0, 0)
+        layout.addWidget(self.input_ismi, 0, 1)
+
+        layout.addWidget(QLabel("Sipariş No"), 1, 0)
+        layout.addWidget(self.input_siparis_no, 1, 1)
+
+        layout.addWidget(QLabel("Adres"), 2, 0)
+        layout.addWidget(self.input_adres, 2, 1)
+
+        layout.addWidget(QLabel("Yemek Seçimi"), 0, 2)
+        layout.addWidget(self.combo_yemek, 0, 3)
+
+        layout.addWidget(QLabel("İçecek Seçimi"), 1, 2)
+        layout.addWidget(self.combo_icecek, 1, 3)
+
+        layout.addWidget(QLabel("Tatlı/Atıştırmalık"), 2, 2)
+        layout.addWidget(self.combo_atistirmalik, 2, 3)
+
+        layout.addWidget(QLabel("Sipariş Tarihi"), 0, 4)
+        layout.addWidget(self.takvim, 1, 4, 3, 1)
+
+        layout.addWidget(self.check_gel_al, 0, 5)
+        layout.addWidget(self.check_tikla_gelsin, 1, 5)
+
+        button_layout = QVBoxLayout()
+        button_layout.addWidget(self.btn_kayit_ekle)
+        button_layout.addWidget(self.btn_sil)
+        button_layout.addWidget(self.btn_ara)
+        button_layout.addWidget(self.btn_guncelle)
+        button_layout.addWidget(self.btn_listele)
+        button_layout.addWidget(self.btn_cikis)
+
+        layout.addLayout(button_layout, 1, 6, 3, 1)
+        layout.addWidget(self.tablo, 4, 0, 1, 7)
+
+        self.setLayout(layout)
+
+    def kayit_ekle(self):
+        isim = self.input_ismi.text()
+        siparis_no = self.input_siparis_no.text()
+        adres = self.input_adres.text()
+        atistirmalik = self.combo_atistirmalik.currentText()
+        yemek = self.combo_yemek.currentText()
+        icecek = self.combo_icecek.currentText()
+        tarih = self.takvim.selectedDate().toString("dd.MM.yyyy")
+        teslimat = []
+
+        if self.check_gel_al.isChecked():
+            teslimat.append("Gel Al")
+        if self.check_tikla_gelsin.isChecked():
+            teslimat.append("Tıkla Gelsin")
+
+        teslimat_str = ", ".join(teslimat)
+
+        # Veritabanına ekleme
+        self.cursor.execute("""
+            INSERT INTO siparisler (isim, siparis_no, adres, atistirmalik, yemek, icecek, tarih, teslimat)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (isim, siparis_no, adres, atistirmalik, yemek, icecek, tarih, teslimat_str))
+        self.conn.commit()
+
+        self.veritabanindan_listele()
+
+    def veritabanindan_listele(self):
+        self.tablo.setRowCount(0)
+        self.cursor.execute("SELECT isim, siparis_no, atistirmalik, yemek, icecek, tarih, teslimat FROM siparisler")
+        for row_data in self.cursor.fetchall():
+            row_index = self.tablo.rowCount()
+            self.tablo.insertRow(row_index)
+            for column, data in enumerate(row_data):
+                self.tablo.setItem(row_index, column, QTableWidgetItem(str(data)))
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    pencere = YemekSiparisUygulamasi()
+    pencere.show()
+    sys.exit(app.exec_())
